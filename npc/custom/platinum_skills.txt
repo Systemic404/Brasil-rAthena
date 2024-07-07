@@ -1,0 +1,35 @@
+//===== rAthena Script =======================================
+//= Habilidades Platinum
+//===== Descrição: ===========================================
+//= NPC único que atribui habilidades de quests para todas as classes
+//= TRADUZIDO POR Typer.me/@Systemic404
+//===== Comentários Adicionais: ==============================
+//= 1.0 Lançamento inicial. [Keichii] [DarkChild]
+//= 2.0 Adicionadas classes avançadas. [ShadowLady]
+//= 2.1 Adicionadas classes bebê. [Midas]
+//= 2.2 Simplificadas verificações de trabalho. [Silentdragon]
+//= 2.3 O que? Limpado o script, removido as coisas desagradáveis. Também adicionadas habilidades de renascimento. [Spre]
+//= 2.4 Adicionadas habilidades avançadas. [Spre]
+//= 2.5 Adicionado diálogo para quando o usuário não é nenhum dos trabalhos listados. [Kisuka]
+//= 2.6 Corrigido classes avançadas de 2ª não podendo obter suas habilidades avançadas. [Ancyker]
+//= 2.7 Reescrito para dar todas as habilidades corretas para todas as classes apropriadas. [Paradox924X]
+//= 2.8 Condicionais agrupados substituídos por switch para incluir todos os tipos Upper. [Euphy]
+//= 2.9 Adicionado MC_CARTDECORATE para a classe Mercador. [mazvi]
+//= 3.0 Migrado/Integrado para Funções Globais. [mazvi]
+//============================================================
+
+prontera,128,200,6	script	Platinum Skill NPC	94,{
+	mes "[Platinum Skill NPC]";
+	mes "Eu posso te dar as habilidades especiais disponíveis para o seu trabalho.";
+	mes "Você gostaria dessas habilidades agora?";
+	next;
+	if (select("Sim, por favor:Não") == 2) {
+		mes "[Platinum Skill NPC]";
+		mes "Tenha um bom dia... >.>";
+		close;
+	}
+	callfunc "F_GetPlatinumSkills";
+	mes "[Platinum Skill NPC]";
+	mes "Aqui estão!";
+	close;
+}
